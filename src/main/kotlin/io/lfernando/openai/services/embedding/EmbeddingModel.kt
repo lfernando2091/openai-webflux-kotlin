@@ -1,9 +1,9 @@
-package io.github.lfernando.openai.services.embedding
+package io.lfernando.openai.services.embedding
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonInclude.Include
-import io.github.lfernando.openai.UsageData
+import io.lfernando.openai.UsageData
 
 /**
  * CreateEmbeddingsRequest.

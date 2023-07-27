@@ -1,4 +1,4 @@
-package io.github.lfernando.openai.services.audio
+package io.lfernando.openai.services.audio
 
 import org.slf4j.LoggerFactory
 import org.springframework.core.io.PathResource

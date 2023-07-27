@@ -1,4 +1,4 @@
-package io.github.lfernando.openai.services.audio
+package io.lfernando.openai.services.audio
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

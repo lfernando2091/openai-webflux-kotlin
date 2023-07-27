@@ -1,9 +1,9 @@
-package io.github.lfernando.openai.services.completion
+package io.lfernando.openai.services.completion
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonInclude.Include
 import com.fasterxml.jackson.annotation.JsonInclude
-import io.github.lfernando.openai.UsageData
+import io.lfernando.openai.UsageData
 
 /**
  * CreateCompletionRequest.

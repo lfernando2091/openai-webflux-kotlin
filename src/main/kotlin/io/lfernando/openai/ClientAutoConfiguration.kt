@@ -1,16 +1,16 @@
-package io.github.lfernando.openai
+package io.lfernando.openai
 
-import io.github.lfernando.openai.exceptions.OpenAIException
-import io.github.lfernando.openai.services.audio.AudioService
-import io.github.lfernando.openai.services.audio.AudioServiceImpl
-import io.github.lfernando.openai.services.chat.ChatService
-import io.github.lfernando.openai.services.chat.ChatServiceImpl
-import io.github.lfernando.openai.services.completion.CompletionService
-import io.github.lfernando.openai.services.completion.CompletionServiceImpl
-import io.github.lfernando.openai.services.edit.EditService
-import io.github.lfernando.openai.services.edit.EditServiceImpl
-import io.github.lfernando.openai.services.embedding.EmbeddingService
-import io.github.lfernando.openai.services.embedding.EmbeddingServiceImpl
+import io.lfernando.openai.exceptions.OpenAIException
+import io.lfernando.openai.services.audio.AudioService
+import io.lfernando.openai.services.audio.AudioServiceImpl
+import io.lfernando.openai.services.chat.ChatService
+import io.lfernando.openai.services.chat.ChatServiceImpl
+import io.lfernando.openai.services.completion.CompletionService
+import io.lfernando.openai.services.completion.CompletionServiceImpl
+import io.lfernando.openai.services.edit.EditService
+import io.lfernando.openai.services.edit.EditServiceImpl
+import io.lfernando.openai.services.embedding.EmbeddingService
+import io.lfernando.openai.services.embedding.EmbeddingServiceImpl
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.autoconfigure.AutoConfiguration
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
@@ -18,7 +18,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpHeaders
-import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Mono
@@ -26,11 +25,11 @@ import reactor.core.publisher.Mono
 @Configuration
 @AutoConfiguration
 @EnableConfigurationProperties(ClientAutoConfigurationProperties::class)
-class ClientAutoConfiguration(
+open class ClientAutoConfiguration(
     val properties: ClientAutoConfigurationProperties
 ) {
 
-    fun errorHandlerExchangeFilterFunction() =
+    private fun errorHandlerExchangeFilterFunction(): ExchangeFilterFunction =
         ExchangeFilterFunction.ofResponseProcessor { clientResponse ->
             if (clientResponse.statusCode().isError) {
                 clientResponse
@@ -48,7 +47,7 @@ class ClientAutoConfiguration(
 
     @Bean
     @Qualifier("OpenAIClient")
-    fun webClient(): WebClient =
+    open fun webClient(): WebClient =
         WebClient.builder()
             .baseUrl(properties.baseUrl)
             .defaultHeaders { httpHeaders ->
@@ -62,31 +61,31 @@ class ClientAutoConfiguration(
 
     @Bean
     @ConditionalOnMissingBean
-    fun chatService(
+    open fun chatService(
         @Qualifier("OpenAIClient") client: WebClient
     ): ChatService = ChatServiceImpl(client)
 
     @Bean
     @ConditionalOnMissingBean
-    fun embeddingService(
+    open fun embeddingService(
         @Qualifier("OpenAIClient") client: WebClient
     ): EmbeddingService = EmbeddingServiceImpl(client)
 
     @Bean
     @ConditionalOnMissingBean
-    fun completionService(
+    open fun completionService(
         @Qualifier("OpenAIClient") client: WebClient
     ): CompletionService = CompletionServiceImpl(client)
 
     @Bean
     @ConditionalOnMissingBean
-    fun audioService(
+    open fun audioService(
         @Qualifier("OpenAIClient") client: WebClient
     ): AudioService = AudioServiceImpl(client)
 
     @Bean
     @ConditionalOnMissingBean
-    fun editService(
+    open fun editService(
         @Qualifier("OpenAIClient") client: WebClient
     ): EditService = EditServiceImpl(client)
 

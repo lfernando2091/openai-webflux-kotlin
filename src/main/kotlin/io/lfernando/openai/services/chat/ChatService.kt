@@ -1,4 +1,4 @@
-package io.github.lfernando.openai.services.chat
+package io.lfernando.openai.services.chat
 
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service

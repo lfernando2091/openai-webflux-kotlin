@@ -1,4 +1,4 @@
-package io.github.lfernando.openai.exceptions
+package io.lfernando.openai.exceptions
 
 import org.springframework.web.reactive.function.client.WebClientException
 

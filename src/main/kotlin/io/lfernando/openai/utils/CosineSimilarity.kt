@@ -1,4 +1,4 @@
-package io.github.lfernando.openai.utils
+package io.lfernando.openai.utils
 
 import kotlin.math.pow
 import kotlin.math.sqrt
