@@ -5,6 +5,21 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include
 import com.fasterxml.jackson.annotation.JsonInclude
 import io.lfernando.openai.UsageData
 
+enum class Models(val value: String) {
+    BABBAGE("babbage"),
+    DAVINCI("davinci"),
+    ADA("ada"),
+    TEXTCURIE_001("text-curie-001"),
+    TEXTADA_001("text-ada-001"),
+    TEXTDAVINCI_003("text-davinci-003"),
+    TEXTDAVINCI_002("text-davinci-002"),
+    CURIEINSTRUCT_BETA("curie-instruct-beta"),
+    DAVINCIINSTRUCT_BETA("davinci-instruct-beta"),
+    TEXTBABBAGE_001("text-babbage-001"),
+    TEXTDAVINCI_001("text-davinci-001"),
+    CURIE("curie")
+}
+
 /**
  * CreateCompletionRequest.
  *

@@ -3,12 +3,24 @@ package io.lfernando.openai.services.chat
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonInclude.Include
 import com.fasterxml.jackson.annotation.JsonProperty
+import com.fasterxml.jackson.annotation.JsonValue
 import io.lfernando.openai.UsageData
 
-enum class Role(val value: String) {
+enum class Role(@JsonValue val value: String) {
     System("system"),
     User("user"),
     Assistant("assistant")
+}
+
+enum class ChatModels(val value: String) {
+    GPT3o5TURBO("gpt-3.5-turbo"),
+    GPT3o5TURBO_0613("gpt-3.5-turbo-0613"),
+    GPT3o5TURBO_16K_0613("gpt-3.5-turbo-16k-0613"),
+    GPT3o5TURBO_0301("gpt-3.5-turbo-0301"),
+    GPT3o5TURBO_16K("gpt-3.5-turbo-16k"),
+    GPT4TURBO_0613("gpt-4-0613"),
+    GPT4TURBO_0314("gpt-4-0314"),
+    GPT4TURBO("gpt-4")
 }
 
 data class MessageData(
