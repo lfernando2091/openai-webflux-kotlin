@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include
 import com.fasterxml.jackson.annotation.JsonInclude
 import io.lfernando.openai.UsageData
 
-enum class Models(val value: String) {
+enum class CompletionModel(val value: String) {
     BABBAGE("babbage"),
     DAVINCI("davinci"),
     ADA("ada"),

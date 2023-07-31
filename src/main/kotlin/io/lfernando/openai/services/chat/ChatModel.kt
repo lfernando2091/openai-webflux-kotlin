@@ -12,7 +12,7 @@ enum class Role(@JsonValue val value: String) {
     Assistant("assistant")
 }
 
-enum class ChatModels(val value: String) {
+enum class ChatModel(val value: String) {
     GPT3o5TURBO("gpt-3.5-turbo"),
     GPT3o5TURBO_0613("gpt-3.5-turbo-0613"),
     GPT3o5TURBO_16K_0613("gpt-3.5-turbo-16k-0613"),

@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonInclude.Include
 import io.lfernando.openai.UsageData
 
+enum class EmbeddingModel(val value: String) {
+    TEXTEMBEDDING_ADA_002("text-embedding-ada-002"),
+}
 /**
  * CreateEmbeddingsRequest.
  *
