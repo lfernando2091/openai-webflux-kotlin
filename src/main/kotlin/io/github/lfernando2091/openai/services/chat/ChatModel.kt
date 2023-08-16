@@ -1,10 +1,10 @@
-package io.lfernando.openai.services.chat
+package io.github.lfernando2091.openai.services.chat
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonInclude.Include
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonValue
-import io.lfernando.openai.UsageData
+import io.github.lfernando2091.openai.UsageData
 
 enum class Role(@JsonValue val value: String) {
     System("system"),

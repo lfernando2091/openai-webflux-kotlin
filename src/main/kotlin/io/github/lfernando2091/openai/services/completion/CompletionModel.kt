@@ -1,9 +1,9 @@
-package io.lfernando.openai.services.completion
+package io.github.lfernando2091.openai.services.completion
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonInclude.Include
 import com.fasterxml.jackson.annotation.JsonInclude
-import io.lfernando.openai.UsageData
+import io.github.lfernando2091.openai.UsageData
 
 enum class CompletionModel(val value: String) {
     BABBAGE("babbage"),

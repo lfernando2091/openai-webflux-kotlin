@@ -1,4 +1,4 @@
-package io.lfernando.openai.services.edit
+package io.github.lfernando2091.openai.services.edit
 
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service

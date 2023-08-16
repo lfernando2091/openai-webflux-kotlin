@@ -1,4 +1,4 @@
-package io.lfernando.openai.services.completion
+package io.github.lfernando2091.openai.services.completion
 
 import org.slf4j.LoggerFactory
 import org.springframework.web.reactive.function.client.WebClient

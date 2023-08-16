@@ -1,9 +1,9 @@
-package io.lfernando.openai.services.embedding
+package io.github.lfernando2091.openai.services.embedding
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.annotation.JsonInclude.Include
-import io.lfernando.openai.UsageData
+import io.github.lfernando2091.openai.UsageData
 
 enum class EmbeddingModel(val value: String) {
     TEXTEMBEDDING_ADA_002("text-embedding-ada-002"),

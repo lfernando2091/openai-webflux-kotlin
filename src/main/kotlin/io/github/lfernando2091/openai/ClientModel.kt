@@ -1,4 +1,4 @@
-package io.lfernando.openai
+package io.github.lfernando2091.openai
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

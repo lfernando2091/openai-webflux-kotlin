@@ -1,8 +1,8 @@
-package io.lfernando.openai.services.edit
+package io.github.lfernando2091.openai.services.edit
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonProperty
-import io.lfernando.openai.UsageData
+import io.github.lfernando2091.openai.UsageData
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 data class CreateEditRequest(

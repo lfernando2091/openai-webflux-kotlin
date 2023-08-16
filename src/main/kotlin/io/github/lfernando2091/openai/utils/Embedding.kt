@@ -1,6 +1,6 @@
-package io.lfernando.openai.utils
+package io.github.lfernando2091.openai.utils
 
-import io.lfernando.openai.services.embedding.EmbeddingData
+import io.github.lfernando2091.openai.services.embedding.EmbeddingData
 import java.math.RoundingMode
 import java.nio.ByteBuffer
 import java.nio.ByteOrder

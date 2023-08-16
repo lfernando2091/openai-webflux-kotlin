@@ -8,7 +8,7 @@
 		<version>2.7.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.lfernando</groupId>
+	<groupId>io.github.lfernando</groupId>
 	<artifactId>openai-webflux-coroutines-spring-boot</artifactId>
 	<version>0.0.1</version>
 	<name>openai-webflux-coroutines-spring-boot</name>
@@ -33,7 +33,7 @@
 		<developer>
 			<name>Fernando Mendez</name>
 			<email>lfernando2091@gmail.com</email>
-			<organization>io.github.lfernando</organization>
+			<organization>io.github.lfernando2091</organization>
 			<organizationUrl>https://github.com/lfernando2091</organizationUrl>
 		</developer>
 	</developers>

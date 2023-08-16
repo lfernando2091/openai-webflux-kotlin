@@ -1,4 +1,4 @@
-package io.lfernando.openai
+package io.github.lfernando2091.openai
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

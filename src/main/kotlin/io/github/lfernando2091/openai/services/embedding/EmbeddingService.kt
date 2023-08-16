@@ -1,4 +1,4 @@
-package io.lfernando.openai.services.embedding
+package io.github.lfernando2091.openai.services.embedding
 
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
