@@ -2,6 +2,7 @@ package io.github.lfernando2091.openai.exceptions
 
 import org.springframework.web.reactive.function.client.WebClientException
 
+// Just for re-run jobs
 class OpenAIException(
     statusCode: Int,
     errorMessage: String
