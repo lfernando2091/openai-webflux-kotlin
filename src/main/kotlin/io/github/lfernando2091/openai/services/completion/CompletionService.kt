@@ -1,11 +1,13 @@
 package io.github.lfernando2091.openai.services.completion
 
 import org.slf4j.LoggerFactory
+import org.springframework.http.ResponseEntity
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.awaitBody
 
 interface CompletionService {
     suspend fun create(data: CreateCompletionRequest): CreateCompletionResponse
+    fun createBlocking(data: CreateCompletionRequest): ResponseEntity<CreateCompletionResponse?>
 }
 
 class CompletionServiceImpl(
@@ -22,4 +24,14 @@ class CompletionServiceImpl(
             .bodyValue(data)
             .retrieve()
             .awaitBody()
+
+    override fun createBlocking(data: CreateCompletionRequest): ResponseEntity<CreateCompletionResponse?> =
+        client
+            .post()
+            .uri(path)
+            .bodyValue(data)
+            .retrieve()
+            .toEntity(CreateCompletionResponse::class.java)
+            .toFuture()
+            .get()
 }

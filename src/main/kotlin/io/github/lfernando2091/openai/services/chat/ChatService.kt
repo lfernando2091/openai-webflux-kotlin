@@ -1,12 +1,14 @@
 package io.github.lfernando2091.openai.services.chat
 
 import org.slf4j.LoggerFactory
+import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.awaitBody
 
 interface ChatService {
     suspend fun create(data: CreateChatCompletionRequest): CreateChatCompletionResponse
+    fun createBlocking(data: CreateChatCompletionRequest): ResponseEntity<CreateChatCompletionResponse?>
 }
 
 @Service
@@ -25,4 +27,14 @@ class ChatServiceImpl(
             .bodyValue(data)
             .retrieve()
             .awaitBody()
+
+    override fun createBlocking(data: CreateChatCompletionRequest): ResponseEntity<CreateChatCompletionResponse?> =
+        client
+            .post()
+            .uri(path)
+            .bodyValue(data)
+            .retrieve()
+            .toEntity(CreateChatCompletionResponse::class.java)
+            .toFuture()
+            .get()
 }
